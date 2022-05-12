@@ -12,10 +12,13 @@ public:
             v3.push_back(i-arr1[i]+arr2[i]);
             v4.push_back(i-arr1[i]-arr2[i]);
         }
-        res = max(res, *max_element(v1.begin(), v1.end())- *min_element(v1.begin(), v1.end()));
-        res = max(res, *max_element(v2.begin(), v2.end())- *min_element(v2.begin(), v2.end()));
-        res = max(res, *max_element(v3.begin(), v3.end())- *min_element(v3.begin(), v3.end()));                            
-        res = max(res, *max_element(v4.begin(), v4.end())- *min_element(v4.begin(), v4.end()));
+       
+    res = max(res, *max_element(v1.begin(), v1.end())- *min_element(v1.begin(), v1.end()));
+    res = max(res, *max_element(v2.begin(), v2.end())- *min_element(v2.begin(), v2.end()));
+    res = max(res, *max_element(v3.begin(), v3.end())- *min_element(v3.begin(), v3.end()));     res = max(res, *max_element(v4.begin(), v4.end())- *min_element(v4.begin(), v4.end()));
+           
+           
+           
         return res;
     }
 };
