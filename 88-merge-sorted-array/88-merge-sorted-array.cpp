@@ -9,9 +9,22 @@ public:
             v.push_back(nums2[j]);
         }
         nums1.clear();
-        for(int k = 0; k<v.size(); k++){
+        // int s = 0;
+        // int e = v.size()-1;
+    //     while(s<=e){
+    //         if(v[s]>v[e]){
+    //             nums1.push_back(v[s]);
+    //             s++;
+    //         }
+    //         else{
+    //             nums1.push_back(v[e]);
+    //             e--;
+    //         }
+    //     }
+    //     reverse(nums1.begin(),nums1.end());
+        for(int k=0; k<v.size(); k++){
             nums1.push_back(v[k]);
         }
         sort(nums1.begin(),nums1.end());
-    }
+     }
 };
