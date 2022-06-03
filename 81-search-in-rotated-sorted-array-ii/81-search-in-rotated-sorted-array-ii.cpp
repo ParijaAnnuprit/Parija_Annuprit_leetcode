@@ -8,7 +8,7 @@ public:
             int m = l+((h-l)/2);
             if(nums[m]==target)
                 return true;
-            if(nums[l] == nums[m] && nums[m] == nums[h] && l!=h){
+            if(l!=h && nums[l] == nums[m] && nums[m] == nums[h]){
                 l++;
                 h--;
             }
