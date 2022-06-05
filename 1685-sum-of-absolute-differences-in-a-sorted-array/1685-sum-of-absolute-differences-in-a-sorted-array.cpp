@@ -1,6 +1,6 @@
 class Solution {
 public:
-//     optimal - prefix sum
+//     optimal - prefix sum TC -()
     vector<int> getSumAbsoluteDifferences(vector<int>& nums) {
         int n = nums.size();
         int post_sum = 0;
