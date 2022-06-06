@@ -1,5 +1,6 @@
 class Solution {
 public:
+//     optimal method = TC-O(nlogn) SC-O(1
     int minEatingSpeed(vector<int>& piles, int h) {
         int n = piles.size();
         int l =1;
