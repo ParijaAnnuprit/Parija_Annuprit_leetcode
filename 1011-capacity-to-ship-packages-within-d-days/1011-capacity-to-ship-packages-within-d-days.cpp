@@ -11,7 +11,7 @@ public:
             h = h+weights[i];
             l = max(l,weights[i]);
         }
-        while(l<h){
+        while(l<h){ //very important if l<h then either l=m or h=m 
             int m = l+((h-l)/2);
             int leftcap = m;
             int udays = 1;
