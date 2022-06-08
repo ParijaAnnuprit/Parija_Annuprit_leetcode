@@ -25,7 +25,7 @@ public:
     }
   return true;
 }
-//         int n = s.length();
+//         int n = s.size();
 //         int l = 0;
 //         int h = n-1;
 //         while(l<h){
