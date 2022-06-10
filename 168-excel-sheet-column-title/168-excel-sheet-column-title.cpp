@@ -21,7 +21,7 @@ public:
     string convertToTitle(int c) {
         string res = "";
         int x = c;
-        while(x){
+        while(x>0){
             int rem = (--x)%26;
             res+= rem+ 'A';
             x = x/26;
