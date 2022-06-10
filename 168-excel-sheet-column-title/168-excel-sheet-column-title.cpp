@@ -20,10 +20,11 @@ class Solution {
 public:
     string convertToTitle(int c) {
         string res = "";
-        while(c){
-            int rem = (--c)%26;
+        int x = c;
+        while(x){
+            int rem = (--x)%26;
             res+= rem+ 'A';
-            c = c/26;
+            x = x/26;
         }
         reverse(res.begin(),res.end());
         return res;
