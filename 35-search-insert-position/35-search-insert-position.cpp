@@ -11,11 +11,11 @@ public:
                 return m;
             else if(nums[m] > target){
                 h = m-1;
-                ans = h+1;}
+                }
             else if(nums[m] < target){
                 l = m+1;
-                ans = l;}
+                }
         }
-        return ans;
+        return l;
     }
 };
