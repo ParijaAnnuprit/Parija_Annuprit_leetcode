@@ -31,7 +31,7 @@ public:
 //         while(l<h){
 //             int m = l+((h-l)/2);
 // //             reverse than the original ie condition matches l=m+1 and h=m since question asks maximum not minimum.
-//             int t=m*m;
+//             long long int t=m*m;
 //             if(t<=x){
 //                 if((m+1)*(m+1)>x || t==x)
 //                     return m;
