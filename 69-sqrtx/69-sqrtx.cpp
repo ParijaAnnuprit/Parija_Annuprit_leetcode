@@ -1,6 +1,6 @@
 class Solution {
 public:
-//     binary search TC- O(n^2) SC- O(1)
+//    optimal- binary search TC- O(n^2) SC- O(1)
     int mySqrt(int x) {
         int l = 0;
         int h = x;
@@ -22,6 +22,26 @@ public:
         return 0;
     }
 };
+// class Solution {
+// public:
+// //    optimal- binary search TC- O(n^2) SC- O(1)
+//     int mySqrt(int x) {
+//         int l = 0;
+//         int h = x+1;
+//         while(l<h){
+//             int m = l+((h-l)/2);
+// //             reverse than the original ie condition matches l=m+1 and h=m since question asks maximum not minimum.
+//             int t=m*m;
+//             if(t<=x){
+//                 if((m+1)*(m+1)>x || t==x)
+//                     return m;
+//                 l = m+1;}
+//             else
+//                 h = m;
+//         }
+//         return l-1;
+//     }
+// };
 
 
 //     brute force TC- O(n^2) SC- O(1)
