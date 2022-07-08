@@ -51,47 +51,75 @@
 
 
 
+// class Solution{
+// public:
+// int romanToInt(string s){
+//     int result{};
+//     s = 'o' + s; // to prevent overflow
+//     for(int i = 0; i < s.size(); ++i){
+//         switch(s[i]){
+//             case 'I': ++result; continue; //nothing to explain here
+//             case 'V':
+//                 switch(s[i - 1]){
+//                     default: result += 5; continue;
+//                     case 'I': result += 3; continue; //+4 -1
+//                 }
+//             case 'X':
+//                 switch(s[i - 1]){
+//                     default: result += 10; continue;
+//                     case 'I': result += 8; continue; //+9 -1
+//                 }
+//             case 'L':
+//                 switch(s[i - 1]){
+//                     default: result += 50; continue;
+//                     case 'X': result += 30; continue; //+40 -10
+//                 }
+//             case 'C':
+//                 switch(s[i - 1]){
+//                     default: result += 100; continue;
+//                     case 'X': result += 80; continue; //+90 -10
+//                 }
+//             case 'D':
+//                 switch(s[i - 1]){
+//                     default: result += 500; continue;
+//                     case 'C': result += 300; continue; //+400 -100
+//                 }
+//             case 'M':
+//                 switch(s[i - 1]){
+//                     default: result += 1000; continue;
+//                     case 'C': result += 800; continue; //+900 -100
+//                 }
+//             default: continue; //for the 'o'
+//         }
+//     }
+//     return result;
+// }
+// };
+
+
+
+
+
 class Solution{
 public:
-int romanToInt(string s){
-    int result{};
-    s = 'o' + s; // to prevent overflow
-    for(int i = 0; i < s.size(); ++i){
-        switch(s[i]){
-            case 'I': ++result; continue; //nothing to explain here
-            case 'V':
-                switch(s[i - 1]){
-                    default: result += 5; continue;
-                    case 'I': result += 3; continue; //+4 -1
-                }
-            case 'X':
-                switch(s[i - 1]){
-                    default: result += 10; continue;
-                    case 'I': result += 8; continue; //+9 -1
-                }
-            case 'L':
-                switch(s[i - 1]){
-                    default: result += 50; continue;
-                    case 'X': result += 30; continue; //+40 -10
-                }
-            case 'C':
-                switch(s[i - 1]){
-                    default: result += 100; continue;
-                    case 'X': result += 80; continue; //+90 -10
-                }
-            case 'D':
-                switch(s[i - 1]){
-                    default: result += 500; continue;
-                    case 'C': result += 300; continue; //+400 -100
-                }
-            case 'M':
-                switch(s[i - 1]){
-                    default: result += 1000; continue;
-                    case 'C': result += 800; continue; //+900 -100
-                }
-            default: continue; //for the 'o'
+    int romanToInt(string s){
+        unordered_map<char,int>m;
+        m['I']=1;
+        m['V']=5;
+        m['X']=10;
+        m['L']=50;
+        m['C']=100;
+        m['D']=500;
+        m['M']=1000;
+        int nums=0;
+        for(int i=0;i<s.length()-1;i++){
+            if(m[s[i]]<m[s[i+1]]){
+                nums-=m[s[i]];
+            }
+            else
+                nums+=m[s[i]];
         }
+        nums+=m[s[s.length()-1]];
+        return nums;
     }
-    return result;
-}
 };
