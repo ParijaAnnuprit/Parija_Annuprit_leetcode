@@ -27,7 +27,7 @@ public:
         int count=0;
         for(int i=0;i<nums.size();i++){
             sum = sum+nums[i];
-            int rem = (sum%k+k)%k; // (sum%k + k)%k
+            int rem = (sum%k+k)%k; // (sum + k)%k
             if(rem==0)
                 count++;
             if(mpp.find(rem)!=mpp.end())
