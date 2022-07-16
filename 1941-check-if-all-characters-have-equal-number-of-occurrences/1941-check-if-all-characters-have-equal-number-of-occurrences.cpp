@@ -6,8 +6,12 @@ public:
             m[s[i]]++;
         }
         int k = m[s[0]];
-        for(auto i:m){
-            if(i.second != k)
+        // for(auto i:m){
+        //     if(i.second != k)
+        //         return false;
+        // }
+        for(auto i=m.begin();i!=m.end();i++){
+            if(i->second != k)
                 return false;
         }
         return true;
