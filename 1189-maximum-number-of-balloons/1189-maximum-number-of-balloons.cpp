@@ -16,8 +16,8 @@ public:
         m['l']=m['l']/2;
         m['o']=m['o']/2;
         int mn = INT_MAX;
-        for(auto i:m){
-            mn = min(mn,i.second);
+        for(auto i=m.begin();i!=m.end();i++){
+            mn = min(mn,i->second);
         }
         return mn;
         // return 0;
