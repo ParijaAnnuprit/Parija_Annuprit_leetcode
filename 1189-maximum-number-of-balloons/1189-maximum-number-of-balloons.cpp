@@ -19,6 +19,9 @@ public:
         for(auto i=m.begin();i!=m.end();i++){
             mn = min(mn,i->second);
         }
+        // for(auto i:m){
+        //     mn = min(mn,i.second);
+        // }
         return mn;
         // return 0;
     }
