@@ -5,7 +5,7 @@ public:
         for(int i=0;i<nums.size();i++){
             mpp[nums[i]]++;
         }
-        auto cmp= [&](int& a, int& b ){
+        auto cmp= [&](int a, int b ){
             return mpp[a]==mpp[b]? a>b: mpp[a]<mpp[b];
         };
         sort(nums.begin(),nums.end(),cmp);
