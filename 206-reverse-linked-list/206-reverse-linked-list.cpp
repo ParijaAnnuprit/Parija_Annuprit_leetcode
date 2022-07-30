@@ -32,12 +32,15 @@ class Solution {
 public:
 
     ListNode* reverseList(ListNode* head) {
+        ListNode* newhead = NULL;
 // using recusion method
-     
-        if(head==NULL || head->next==NULL) return head;
-        ListNode *temp=reverseList(head->next);
-        head->next->next=head;
-        head->next=NULL;
-      return temp;
+        if(head == NULL || head->next == NULL)
+            return head;
+        else{
+            newhead = reverseList(head->next);
+            head->next->next = head;
+            head->next = NULL;
+        }
+        return newhead;
     }
 };
