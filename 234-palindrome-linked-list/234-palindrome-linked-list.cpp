@@ -25,6 +25,7 @@ ListNode* reverse(ListNode* head){
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
+//         here i did reverse the second half using recursion
         ListNode* slow = head;
         ListNode* fast = head;
         ListNode* revhead = NULL;
@@ -38,7 +39,7 @@ public:
         }
         while(fast!=NULL && fast->next != NULL){
             fast = fast->next->next;
-//           odd case
+//           odd case (odd always above even since if only three nodes then problem)
             if(fast->next == NULL){
                 revhead = reverse(slow->next->next);
                 break;
@@ -60,3 +61,20 @@ public:
         return true;
     }
 };
+
+// ListNode* getsize(ListNode* head){
+//     while(head!=NULL){
+//         head = head->next;
+//         size++;
+//     }
+// }
+
+// class Solution {
+// public:
+//     bool isPalindrome(ListNode* head) {
+// //      total recursion
+//         ListNode* dummy = NULL;
+//         dummy->next = head;
+//        int size = getsize(dummy); 
+//     }
+// };
