@@ -12,13 +12,13 @@
 ListNode* merge(ListNode* l1, ListNode* l2){
     if(l1 == NULL)
         return l2;
-    else if (l2== NULL)
+     if(l2== NULL)
         return l1;
-    else if(l1->val <= l2->val){
+    if(l1->val <= l2->val){
         l1->next = merge(l1->next, l2);
         return l1;
     }
-    else if(l2->val <= l1->val){
+    if(l2->val <= l1->val){
         l2->next = merge(l2->next,l1);
         return l2;
     }
