@@ -21,13 +21,14 @@ public:
     }
     int getMinimumDifference(TreeNode* root) {
         TreeNode* curr = root;
-        vector<int>res;
+        // vector<int>res;
         inorder(curr);
+        int diff = INT_MAX;
         sort(v.begin(),v.end());
         for(int i=1;i<v.size();i++)
-            res.push_back(v[i]-v[i-1]);
-        sort(res.begin(),res.end());
-        return res[0];
+            diff = min(diff, v[i]-v[i-1]);
+        // sort(res.begin(),res.end());
+        return diff;
     }
 };
 
