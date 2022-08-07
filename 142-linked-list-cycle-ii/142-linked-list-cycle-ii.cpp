@@ -15,7 +15,6 @@ public:
         // ListNode* dummy = &temphead;
         ListNode* fast = head, *curr=head;
         ListNode* slow  = head;
-      bool condition = false;
         while(fast!=NULL and  fast->next!=NULL){
             
             slow = slow->next;
