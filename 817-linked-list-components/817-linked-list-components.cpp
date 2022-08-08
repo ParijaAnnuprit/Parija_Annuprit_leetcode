@@ -23,7 +23,7 @@ public:
                 p++;
                  head = head->next;
             }
-            else
+             else
                 head= head->next;
         }
         return p;
