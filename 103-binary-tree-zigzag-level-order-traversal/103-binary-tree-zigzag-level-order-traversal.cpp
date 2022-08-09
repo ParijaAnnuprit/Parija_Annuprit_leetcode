@@ -20,7 +20,7 @@ public:
         while(!q.empty()){
             vector<int>level;
             int x = q.size();
-            for(int i=0;i<x;i++){
+            while(x--){
                 TreeNode* temp = q.front();
                 q.pop();
                 if(temp->left!=NULL) q.push(temp->left);
