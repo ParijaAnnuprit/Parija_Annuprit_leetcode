@@ -15,10 +15,11 @@ public:
         return helper(nums, 0, nums.size()-1);
     }
     TreeNode* helper(vector<int>& nums , int b, int e){
+        if(b>e) return nullptr;
         int mid = (b+e)/2;
         TreeNode* root = new TreeNode(nums[mid]);
-        if(b<mid) root->left = helper(nums, b, mid-1);
-        if(mid<e) root->right = helper(nums, mid+1, e);
+        root->left = helper(nums, b, mid-1);
+        root->right = helper(nums, mid+1, e);
         return root;
     }
 };
