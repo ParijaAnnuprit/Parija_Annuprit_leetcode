@@ -11,11 +11,8 @@
  */
 class Solution {
 public:
-    int sizel=0;
-    int sizer=0;
     int maxDepth(TreeNode* root) {
-        if(root== NULL)
-            return 0;
-        return 1+max(maxDepth(root->left),maxDepth(root->right));
+        if(root == NULL) return 0;
+        return max(maxDepth(root->left)+1, maxDepth(root->right)+1);
     }
 };
