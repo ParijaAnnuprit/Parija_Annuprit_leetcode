@@ -6,7 +6,7 @@ public:
         vector<int>v;
         while(x<y){
             if(numbers[x]+numbers[y] < target){
-                x++;
+                x++; 
             }
             else if(numbers[x]+numbers[y] > target){
                 y--;
