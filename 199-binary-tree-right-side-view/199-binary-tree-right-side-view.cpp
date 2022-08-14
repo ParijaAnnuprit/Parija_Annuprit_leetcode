@@ -19,15 +19,15 @@ public:
         // vector<vector<int>>res;
         while(!q.empty()){
             int h = q.size();
-            vector<int>v;
+            //vector<int>v;
             for(int i=0;i<h;i++){
                 TreeNode* temp = q.front();
                 q.pop();
                 if(temp->left) q.push(temp->left);
                 if(temp->right) q.push(temp->right);
-                v.push_back(temp->val);
+                if(i==h-1) vfinal.push_back(temp->val);
             }
-            vfinal.push_back(v[v.size()-1]);
+           // vfinal.push_back(v[v.size()-1]);
         }
         // for(int i=0;i<res.size();i++){
         //     vfinal.push_back(res[i][res[i].size()-1]);
