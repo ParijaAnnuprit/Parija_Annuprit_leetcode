@@ -16,10 +16,8 @@ public:
         if(root == NULL) return vfinal;
         queue<TreeNode*>q;
         q.push(root);
-        // vector<vector<int>>res;
         while(!q.empty()){
             int h = q.size();
-            //vector<int>v;
             for(int i=0;i<h;i++){
                 TreeNode* temp = q.front();
                 q.pop();
@@ -27,11 +25,7 @@ public:
                 if(temp->right) q.push(temp->right);
                 if(i==h-1) vfinal.push_back(temp->val);
             }
-           // vfinal.push_back(v[v.size()-1]);
         }
-        // for(int i=0;i<res.size();i++){
-        //     vfinal.push_back(res[i][res[i].size()-1]);
-        
         return vfinal;
     }
 };
