@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-   // unordered_map<int,int>mpp;
+  
     int maxLevelSum(TreeNode* root) {
         queue<TreeNode*>q;
         q.push(root);
@@ -33,11 +33,9 @@ public:
                 maxsum=sum;
                 j=level;
             }
-            // if(mpp.find(sum)==mpp.end())
-            //     mpp[sum]=level;
-            // maxsum = max(maxsum,sum);
+        
         }
-        // return mpp[maxsum];
+    
         return j;
     }
 };
