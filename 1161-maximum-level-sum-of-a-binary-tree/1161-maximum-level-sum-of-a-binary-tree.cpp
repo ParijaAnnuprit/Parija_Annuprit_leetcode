@@ -11,11 +11,11 @@
  */
 class Solution {
 public:
-    unordered_map<int,int>mpp;
+   // unordered_map<int,int>mpp;
     int maxLevelSum(TreeNode* root) {
         queue<TreeNode*>q;
         q.push(root);
-        int level = 0;
+        int level = 0, j=0;
         int maxsum = INT_MIN;
         while(!q.empty()){
             int h = q.size();
@@ -28,10 +28,16 @@ public:
                 if(temp->right) q.push(temp->right);
                 sum+=temp->val;
             }
-            if(mpp.find(sum)==mpp.end())
-                mpp[sum]=level;
-            maxsum = max(maxsum,sum);
+            
+            if(maxsum < sum){
+                maxsum=sum;
+                j=level;
+            }
+            // if(mpp.find(sum)==mpp.end())
+            //     mpp[sum]=level;
+            // maxsum = max(maxsum,sum);
         }
-        return mpp[maxsum];
+        // return mpp[maxsum];
+        return j;
     }
 };
