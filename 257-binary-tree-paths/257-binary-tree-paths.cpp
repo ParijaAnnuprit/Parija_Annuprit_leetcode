@@ -15,7 +15,7 @@ public:
     vector<string> binaryTreePaths(TreeNode* root) {
         if(root== NULL) return v;
         string s = to_string(root->val);
-        if(root->left == NULL && root->right == NULL) {
+        if(root->left== NULL && root->right == NULL){
             v.push_back(s);
             return v;
         }
@@ -24,11 +24,10 @@ public:
         return v;
     }
     void paths(TreeNode* root, string s){
-        if(root == NULL) return;
+        if(root == NULL) return; 
         s = s+ "->"+to_string(root->val);
         if(root->left == NULL && root->right == NULL) v.push_back(s);
         if(root->left) paths(root->left,s);
-        // s = s+ "->"+to_string(root->val);
         if(root->right) paths(root->right,s);
     }
 };
