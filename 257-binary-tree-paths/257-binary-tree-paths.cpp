@@ -62,7 +62,7 @@ public:
     if(root->right)
         path(root->right , ans, output);
     
-    // output.pop_back();  // backtrack
+    output.pop_back();  // backtrack
     
 }
 
