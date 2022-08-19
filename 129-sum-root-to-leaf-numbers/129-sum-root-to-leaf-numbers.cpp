@@ -45,7 +45,7 @@ public:
         if(root->left== NULL && root->right == NULL) v.push_back(currsum);
         helper(root->left,currsum);
         helper(root->right,currsum);
-        // currsum = currsum-root->val;
-        // currsum = currsum/10;
+        currsum = currsum-root->val;
+        currsum = currsum/10;
     }
 };
