@@ -9,29 +9,35 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// class BSTIterator {
-// public:
-//     stack<TreeNode*>st;
-//     BSTIterator(TreeNode* root) {
-//         TreeNode* temp = root;
-//         while(temp!=NULL){
-//             st.push(temp);
-//             temp = temp->left;
-//         }
-//     }
+class BSTIterator {
+public:
+    stack<TreeNode*>st;
+    BSTIterator(TreeNode* root) {
+        TreeNode* temp = root;
+        while(temp!=NULL){
+            st.push(temp);
+            temp = temp->left;
+        }
+    }
     
-//     int next() {
-//         TreeNode* temp2 = st.top();
-//         st.pop();
-//         if(temp2->right) BSTIterator(temp2->right);
-//         return temp2->val;
-//     }
+    int next() {
+        TreeNode* temp2 = NULL;
+        if(st.top()) temp2 = st.top();
+        st.pop();
+        int x = temp2->val;
+        temp2 = temp2->right;
+        while(temp2!=NULL){
+            st.push(temp2);
+            temp2 = temp2->left;
+        }
+        return x;
+    }
     
-//     bool hasNext() {
-//         if(!st.empty()) return true;
-//         return false;
-//     }
-// };
+    bool hasNext() {
+        if(!st.empty()) return true;
+        return false;
+    }
+};
 
 /**
  * Your BSTIterator object will be instantiated and called as such:
@@ -41,26 +47,26 @@
  */
 
 
-class BSTIterator {
-public:
-    vector<int>v;
-    int i=0;
-    void inorder(TreeNode* root){
-        if(root== NULL) return;
-        inorder(root->left);
-        v.push_back(root->val);
-        inorder(root->right);
-    }
-    BSTIterator(TreeNode* root) {
-        inorder(root);
-    }
+// class BSTIterator {
+// public:
+//     vector<int>v;
+//     int i=0;
+//     void inorder(TreeNode* root){
+//         if(root== NULL) return;
+//         inorder(root->left);
+//         v.push_back(root->val);
+//         inorder(root->right);
+//     }
+//     BSTIterator(TreeNode* root) {
+//         inorder(root);
+//     }
     
-    int next() {
-        return v[i++];
-    }
+//     int next() {
+//         return v[i++];
+//     }
     
-    bool hasNext() {
-        if(i>v.size()-1) return false;
-        return true;
-    }
-};
+//     bool hasNext() {
+//         if(i>v.size()-1) return false;
+//         return true;
+//     }
+// };
