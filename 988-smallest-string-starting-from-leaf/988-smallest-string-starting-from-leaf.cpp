@@ -27,6 +27,7 @@ public:
         }
         helper(root->left,s);
         helper(root->right,s);
+        // s.pop_back();
     }
 };
 
