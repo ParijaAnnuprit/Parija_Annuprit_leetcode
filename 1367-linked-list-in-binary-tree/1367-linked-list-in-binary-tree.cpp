@@ -39,7 +39,6 @@ public:
         if(head==NULL) return true;
         if(root==NULL) return false;
         if(root->val != head->val){
-            // if(root->val==temp->val) return subpath(temp,root);
              return (subpath(temp,root->left) || subpath(temp,root->right));
         }
         return (subpath(head->next, root->left) || subpath(head->next, root->right));
