@@ -10,26 +10,19 @@
  */
 class Solution {
 public:
+    ListNode* dummy = new ListNode(-1);
+    ListNode* dum = dummy;
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 //         using recursion
-        ListNode* dummy = new ListNode(-1);
-        ListNode* dum = dummy;
-        while(list1!=NULL && list2!=NULL){
-            if(list1->val <= list2->val){
-                ListNode* temp = new ListNode(list1->val);
-                dum->next = temp;
-                dum = dum->next;
-                list1 = list1->next;
-            }
-            else if(list2->val < list1->val){
-                ListNode* temp = new ListNode(list2->val);
-                dum->next = temp;
-                dum = dum->next;
-                list2 = list2->next;
-            }
+        if(list1 == NULL) return list2;
+        if(list2 == NULL) return list1;
+        if(list1->val <= list2->val){
+            list1->next = mergeTwoLists(list1->next,list2);
+            return list1;
         }
-        if(list2 !=NULL) dum->next= list2;
-        if(list1 != NULL) dum->next = list1;
-        return dummy->next;
+        else{
+            list2->next = mergeTwoLists(list1,list2->next);
+            return list2;
+        }
     }
 };
