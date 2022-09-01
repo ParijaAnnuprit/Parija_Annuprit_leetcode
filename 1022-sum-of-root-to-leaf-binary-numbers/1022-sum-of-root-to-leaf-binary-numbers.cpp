@@ -25,7 +25,6 @@ public:
         if(root==NULL) return;
         s+=to_string(root->val);
         if(root->left == NULL && root->right== NULL) v.push_back(s);
-        
         strings(root->left,s);
         strings(root->right,s);
     }
