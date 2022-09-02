@@ -12,25 +12,28 @@
 class Solution {
 public:
     vector<double> averageOfLevels(TreeNode* root) {
-        vector<double>v;
-        if(root == NULL) return v;
-        
         queue<TreeNode*>q;
         q.push(root);
+        vector<double>res;
         while(!q.empty()){
-            double sum = 0;
+            int h = q.size();
+            vector<int>v;
             int count = 0;
-            int size = q.size();
-            for(int i=0;i<size;i++){
-                TreeNode* node = q.front();
+            for(int i=0;i<h;i++){
+                TreeNode* temp = q.front();
                 q.pop();
-                if(node->left!=NULL) q.push(node->left);
-                if(node->right!= NULL) q.push(node->right);
-                sum += node->val;
+                if(temp->left) q.push(temp->left);
+                if(temp->right) q.push(temp->right);
+                v.push_back(temp->val);
                 count++;
             }
-            v.push_back(sum/count);
+            double sum = 0;
+            for(int j =0;j<v.size();j++){
+                sum+=v[j];
+            }
+            double x = sum/count;
+            res.push_back(x);
         }
-        return v;
+        return res;
     }
 };
