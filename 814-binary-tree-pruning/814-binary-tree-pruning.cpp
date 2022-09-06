@@ -12,14 +12,15 @@
 class Solution {
 public:
     TreeNode* pruneTree(TreeNode* root) {
-       return containsone(root) ? root : NULL; 
+        return searchone(root) ? root:NULL;
+        
     }
-    bool containsone(TreeNode* root){
-        if(root == NULL) return false;
-        bool leftcontainsone = containsone(root->left);
-        bool rightcontainsone = containsone(root->right);
-        if(!leftcontainsone) root->left = NULL;
-        if(!rightcontainsone) root->right = NULL;
-        return (root->val==1 || leftcontainsone || rightcontainsone);
+    bool searchone(TreeNode* root){
+        if(root==NULL) return false;
+        bool left = searchone(root->left);
+        bool right = searchone(root->right);
+        if(!left) root->left = NULL;
+        if(!right) root->right = NULL;
+        return(root->val == 1|| left|| right);
     }
 };
