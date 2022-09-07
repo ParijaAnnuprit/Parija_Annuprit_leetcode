@@ -1,6 +1,3 @@
-
-
-
 class NumberContainers {
 public:
     unordered_map<int,priority_queue<int,vector<int>, greater<int>>>mnum;
@@ -22,7 +19,6 @@ public:
         return -1;
     }
 };
-
 /**
  * Your NumberContainers object will be instantiated and called as such:
  * NumberContainers* obj = new NumberContainers();
