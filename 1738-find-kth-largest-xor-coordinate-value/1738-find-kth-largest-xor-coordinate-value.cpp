@@ -14,6 +14,7 @@
 //                 else{
 //                     q.push(matrix[i][j]^matrix[i-1][j]^matrix[i][j-1]^matrix[i-1][j-1]);
 //                 }
+//             // if(q.size()>k) q.pop();
 //             }
 //         }
 //         while(k>1){
@@ -46,6 +47,10 @@ public:
                     pq.pop();
             }
         }
+        // while(k>1){
+        //     pq.pop();
+        //     k--;
+        // }
         return pq.top();
     }
 };
