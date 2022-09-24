@@ -14,17 +14,20 @@ public:
     vector<vector<int>>v;
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
         vector<int>path;
-        helper(root,path,targetSum);
+        int sum =0;
+        helper(root, path, sum, targetSum);
         return v;
+        
     }
-    void helper(TreeNode* root, vector<int>& path, int rem){
-        if(root ==NULL) return;
+    void helper(TreeNode* root, vector<int>& path, int sum, int targetsum){
+        if(root==NULL) return;
+        sum+=root->val;
         path.push_back(root->val);
-        if(root->left == NULL && root->right == NULL && rem == root->val){
+        if(root->left==NULL && root->right ==NULL && sum==targetsum){
             v.push_back(path);
         }
-        helper(root->left, path, rem-root->val);
-        helper(root->right, path, rem-root->val);
+        if(root->left) helper(root->left, path, sum, targetsum);
+        if(root->right) helper(root->right, path, sum, targetsum);
         path.pop_back();
     }
 };
