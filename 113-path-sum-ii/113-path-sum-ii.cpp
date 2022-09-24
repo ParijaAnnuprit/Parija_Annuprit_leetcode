@@ -29,5 +29,6 @@ public:
         if(root->left) helper(root->left, path, sum, targetsum);
         if(root->right) helper(root->right, path, sum, targetsum);
         path.pop_back();
+        sum-=root->val;
     }
 };
