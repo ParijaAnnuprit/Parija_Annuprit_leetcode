@@ -10,14 +10,14 @@ public:
             sum+=a;
         }
         double half = sum/2;
-        while(!q.empty() && sum>half){
+        while(!q.empty()){
             double b = q.top()/2.0;
             sum-=q.top();
             sum+=b;
             q.pop();
             q.push(b);
             count++;
-            // if(sum<=half) break;
+            if(sum<=half) break;
         }
         return count;
     }
