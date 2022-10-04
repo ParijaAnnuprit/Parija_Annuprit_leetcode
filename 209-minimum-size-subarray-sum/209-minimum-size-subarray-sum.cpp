@@ -1,6 +1,7 @@
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
+//         this is the real sliding window o(n)
         int mini = INT_MAX;
         int j = 0;
         int sum = 0;
@@ -22,6 +23,7 @@ public:
 };
 
 
+// this is not real prefix sum since the time complexity is o(n^2)
 // class Solution {
 // public:
 //     int minSubArrayLen(int target, vector<int>& nums) {
