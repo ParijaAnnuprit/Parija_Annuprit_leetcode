@@ -18,28 +18,26 @@ public:
             return newroot;
         }
         queue<TreeNode*>q;
-        int level = 1 ;
-        // int flag=0;
         q.push(root);
+        int level = 1;
         while(!q.empty()){
-            level++;
             int h = q.size();
+            level++;
             for(int i=0;i<h;i++){
                 TreeNode* temp = q.front();
                 q.pop();
                 if(level==depth){
-                    // flag=1;
                     if(temp->left || !temp->left){
-                        TreeNode* templ = temp->left;
-                        TreeNode* n = new TreeNode(val);
-                        temp->left = n;
-                        n->left = templ; 
+                        TreeNode* node = temp->left;
+                        TreeNode* newnode = new TreeNode(val);
+                        temp->left = newnode;
+                        newnode->left = node;
                     }
                     if(temp->right || !temp->right){
-                        TreeNode* tempr = temp->right;
-                        TreeNode* x = new TreeNode(val);
-                        temp->right = x;
-                        x->right = tempr;
+                        TreeNode* node = temp->right;
+                        TreeNode* newnode = new TreeNode(val);
+                        temp->right = newnode;
+                        newnode->right = node;
                     }
                 }
                 else{
@@ -47,7 +45,7 @@ public:
                     if(temp->right) q.push(temp->right);
                 }
             }
-            if(level==depth) break;
+            if(level == depth) break;
         }
         return root;
     }
